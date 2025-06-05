@@ -100,3 +100,9 @@ AddEventHandler('sa_survival:server:triggerVomit', function(coords)
     -- TriggerClientEvent('sa_survival:client:spawnVomitEffect', src, coords)
     lib_notify({ source = src, title = 'อาการป่วย', description = 'คุณอาเจียนออกมา!', type = 'warning' })
 end)
+
+function setPlayerStateIfChanged(playerState, key, value)
+    if playerState[key] ~= value then
+        playerState:set(key, value, true)
+    end
+end
