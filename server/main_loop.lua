@@ -28,6 +28,8 @@ Citizen.CreateThread(function()
                     ProcessPlayerTemperatureEffects(src, playerState)
 
                 end
+            else
+                print(string.format('[Survival Core][WARNING] player:hunger state missing for player %d. Skipping state update!', src))
             end
         end
     end
